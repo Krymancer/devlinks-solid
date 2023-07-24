@@ -1,10 +1,13 @@
 import { Component } from "solid-js";
 
+import IlustrationEmpty from '@images/illustration-empty.svg';
+import Header from "@components/Header";
+
 const Main : Component = () => {
   return (
-    <div>
-      <h1 class="font-bold text-5xl italic">Instrument Sans Italic</h1>
-      <h1 class="font-bold text-5xl">Instrument Sans Regular</h1>
+    <div class="bg-light-gray min-h-screen">
+      <Header />
+      
     </div>
   );
 }

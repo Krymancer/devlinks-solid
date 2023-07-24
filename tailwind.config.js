@@ -4,11 +4,30 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {
       fontFamily: {
-        'sans': ['"InstrumentSans"', 'sans-serif'],
+        sans: ['"InstrumentSans"', 'sans-serif'],
+      },
+      colors: {
+        'dark-gray': '#333333',
+        gray: '#737373',
+        'light-gray': '#FAFAFA',
+        boders: '#D9D9D9',
+        purple: '#633CFF',
+        'light-purple': '#EFEBFF',
+        'purple-hover': '#BEADFF',
+        white: '#FFFFFF',
+        red: '#FF3939',
+      },
+      fontSize: {
+        sm: ['12px', {lineHeight: '150%'}],
+        base: ['16px', {lineHeight: '150%'}],
+        lg: ['32px', {lineHeight: '150%'}],
+      },
+      screens: {
+        sm: '375px',
+        md: '768px',
+        lg: '1440px',
       }
-    },
   },
   plugins: [],
 }

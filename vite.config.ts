@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
+import tsConfigPaths from 'vite-tsconfig-paths';
+import solidSvg from 'vite-plugin-solid-svg';
 // import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
@@ -10,6 +12,8 @@ export default defineConfig({
     */
     // devtools(),
     solidPlugin(),
+    tsConfigPaths(),
+    solidSvg()
   ],
   server: {
     port: 3000,
