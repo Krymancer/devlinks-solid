@@ -17,6 +17,7 @@ module.exports = {
         'purple-hover': '#BEADFF',
         white: '#FFFFFF',
         red: '#FF3939',
+        transparent: 'transparent',
       },
       fontSize: {
         sm: ['12px', {lineHeight: '150%'}],

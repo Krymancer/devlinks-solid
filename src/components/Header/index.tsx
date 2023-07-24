@@ -21,8 +21,8 @@ const Header: Component = () => {
   const profileClick = () => navigate("/profile");
 
   return (
-    <header class="p-6">
-      <div class="bg-white flex items-center justify-between px-6 py-2 rounded-xl">
+    <header class="px-6 py-4  md:p-6 bg-white md:bg-transparent">
+      <div class="bg-white flex items-center justify-between md:px-6 md:py-2 md:rounded-xl">
       <div>
         <div class="mr-5 md:hidden">
           <Logo />
