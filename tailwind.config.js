@@ -22,7 +22,8 @@ module.exports = {
       fontSize: {
         sm: ['12px', {lineHeight: '150%'}],
         base: ['16px', {lineHeight: '150%'}],
-        lg: ['32px', {lineHeight: '150%'}],
+        lg: ['24px', {lineHeight: '150%'}],
+        xl: ['32px', {lineHeight: '150%'}],
       },
       screens: {
         sm: '375px',
