@@ -7,11 +7,11 @@ import Button from "@components/Button";
 
 const Main : Component = () => {
   return (
-    <div class="bg-light-gray min-h-screen">
+    <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
-      <main class="p-4 md:px-6 py-0">
+      <main class="flex flex-col p-4 md:px-6 py-0 flex-1">
         <Card>
-          <div class="flex flex-col gap-10">
+          <div class="flex flex-col gap-10 flex-1">
             <div class="flex flex-col gap-2">
               <div class="font-bold text-lg"> Customize your links</div>
               <div>Add/edit/remove links bellow and then share all you profiles with the world!</div>
@@ -29,9 +29,9 @@ const Main : Component = () => {
 
 const GetStarted = () => {
   return (
-    <div class="flex flex-col rounded-xl bg-light-gray px-5 py-10 gap-6">
-      <div class="h-20 flex items-center justify-center">
-        <IlustrationEmpty class="scale-50 " />
+    <div class="flex flex-col rounded-xl bg-light-gray px-5 py-10 gap-6 items-center justify-center flex-1">
+      <div class="h-20 flex items-center justify-center md:h-full">
+        <IlustrationEmpty class="scale-50 md:scale-100" />
       </div>
       <div class="font-bold text-lg">Let's get you started</div>
       <div>Use the "Add new link" button to get started. Once you have more than one link, you can reorder and edit them. We're here to help you share you profiles with everyone!</div>
