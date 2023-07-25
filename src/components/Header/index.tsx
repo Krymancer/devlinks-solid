@@ -9,9 +9,9 @@ import ProfileDeatilsIcon from "@images/icon-profile-details-header.svg";
 import PreviewIcon from "@images/icon-preview-header.svg";
 
 const baseClasses =
-  "flex gap-2 font-base items-center justify-center px-7 py-3 text-gray hover:text-purple cursor-pointer";
+  "flex gap-2 font-base items-center justify-center px-7 py-3 text-gray hover:text-purple cursor-pointer transition-all";
 const activeClasses =
-  "flex gap-2 font-base items-center justify-center rounded-lg px-7 py-3 text-purple bg-light-purple cursor-pointer";
+  "flex gap-2 font-base items-center justify-center rounded-lg px-7 py-3 text-purple bg-light-purple cursor-pointer transition-all";
 
 const Header: Component = () => {
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Header: Component = () => {
   const profileClick = () => navigate("/profile");
 
   return (
-    <header class="px-6 py-4  md:p-6 bg-white md:bg-transparent">
+    <header class="px-6 py-4  md:p-6 bg-white md:bg-transparent transition-all">
       <div class="bg-white flex items-center justify-between md:px-6 md:py-2 md:rounded-xl">
       <div>
         <div class="mr-5 md:hidden">

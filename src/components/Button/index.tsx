@@ -37,7 +37,7 @@ const Button: Component<ButtonProps> = (props) => {
 
 const ButtonPrimaryDefault: Component<{label: string}> = (props) => {
   return (
-    <div class="bg-purple text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:w-fit md:px-4 select-none">
+    <div class="bg-purple text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
@@ -45,7 +45,7 @@ const ButtonPrimaryDefault: Component<{label: string}> = (props) => {
 
 const ButtonPrimaryActive: Component<{label: string}> = (props) => {
   return (
-    <div class="bg-purple-hover text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:w-fit md:px-4 select-none">
+    <div class="bg-purple-hover text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
@@ -53,7 +53,7 @@ const ButtonPrimaryActive: Component<{label: string}> = (props) => {
 
 const ButtonPrimaryDisabled: Component<{label: string}> = (props) => {
   return (
-    <div class="bg-purple opacity-25 text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:w-fit md:px-4 select-none">
+    <div class="bg-purple opacity-25 text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
@@ -61,7 +61,7 @@ const ButtonPrimaryDisabled: Component<{label: string}> = (props) => {
 
 const ButtonSecondaryDefault: Component<{label: string}> = (props) => {
   return (
-    <div class="text-purple border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:bg-purple-hover transition-all md:w-fit md:px-4 select-none">
+    <div class="text-purple border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:bg-purple-hover transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
@@ -69,7 +69,7 @@ const ButtonSecondaryDefault: Component<{label: string}> = (props) => {
 
 const ButtonSecondaryActive: Component<{label: string}> = (props) => {
   return (
-    <div class="text-white border border-purple bg-purple-hover font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:w-fit md:px-4 select-none">
+    <div class="text-white border border-purple bg-purple-hover font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
@@ -77,7 +77,7 @@ const ButtonSecondaryActive: Component<{label: string}> = (props) => {
 
 const ButtonSecondaryDisabled: Component<{label: string}> = (props) => {
   return (
-    <div class="text-purple opacity-25 border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:w-fit md:px-4 select-none">
+    <div class="text-purple opacity-25 border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none">
       {props.label}
     </div>
   );
