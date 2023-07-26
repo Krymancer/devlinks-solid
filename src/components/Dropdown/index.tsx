@@ -23,104 +23,91 @@ interface ItemProps {
   active?: boolean;
 }
 
-const baseItemClass = 'flex gap-3 cursor-pointer items-center px-4 py-3';
-const activeItemClass = 'flex gap-3 cursor-pointer items-center px-4 py-3 text-purple';
+const baseItemClass = 'flex gap-3 cursor-pointer items-center px-4 py-3 hover:text-purple-hover transition-all select-none';
+const activeItemClass = 'flex gap-3 cursor-pointer items-center px-4 py-3 text-purple trasition-all select-none';
 
 const Item: Component<ItemProps> = (props) => {
+  const Icon = props.icon;
   return (
     <div class={props.active ? activeItemClass : baseItemClass}>
-        <props.icon fill="red" /> {props.label}
+      {// @ts-ignore /* Type 'Component<SvgSVGAttributes<SVGSVGElement>>' is not assignable to type 'string | Element'. <- Supress this error */
+      props.icon}
+      {props.label}
       </div>
   );
 };
 
-const baseClass = 'flex gap-4 border border-boders rounded-lg cursor-pointer items-center px-4 py-3 w-[480px] justify-between hover:border-purple hover:shadow-[0_0_10px_#633CFF]';
-const activeClass = 'flex gap-4 border border-purple shadown shadown-purple rounded-lg cursor-pointer items-center px-4 py-3 w-[480px] justify-between shadow-[0_0_10px_#633CFF]';
+const baseClass = 'flex gap-4 border border-boders rounded-lg cursor-pointer items-center px-4 py-3 w-[480px] justify-between hover:border-purple hover:shadow-[0_0_10px_#633CFF] select-none';
+const activeClass = 'flex gap-4 border border-purple shadown shadown-purple rounded-lg cursor-pointer items-center px-4 py-3 w-[480px] justify-between shadow-[0_0_10px_#633CFF] select-none';
+const items = [
+  {
+    icon: Github,
+    label: 'Github',
+  },
+  {
+    icon: FrontendMentor,
+    label: 'Frontend Mentor',
+  },
+  {
+    icon: Twitter,
+    label: 'Twitter',
+  },
+  {
+    icon: Linkedin,
+    label: 'Linkedin',
+  },
+  {
+    icon: Youtube,
+    label: 'Youtube',
+  },
+  {
+    icon: Facebook,
+    label: 'Facebook',
+  },
+  {
+    icon: Twitch,
+    label: 'Twitch',
+  },
+  {
+    icon: DevTo,
+    label: 'DevTo',
+  },
+  {
+    icon: Codewars,
+    label: 'Codewars',
+  },
+  {
+    icon: Codepen,
+    label: 'Codepen',
+  },
+  {
+    icon: freeCodeCamp,
+    label: 'freeCodeCamp',
+  },
+  {
+    icon: Gitlab,
+    label: 'Gitlab',
+  },
+  {
+    icon: Hashnode,
+    label: 'Hashnode',
+  },
+  {
+    icon: StackOverflow,
+    label: 'StackOverflow',
+  }
+];
 
 const Dropdown: Component = () => {
   const [active, SetActive] = createSignal(false);
-  const items = [
-    {
-      icon: Github,
-      label: 'Github',
-      active: true,
-    },
-    {
-      icon: FrontendMentor,
-      label: 'Frontend Mentor',
-      active: false,
-    },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      active: false,
-    },
-    {
-      icon: Linkedin,
-      label: 'Linkedin',
-      active: false,
-    },
-    {
-      icon: Youtube,
-      label: 'Youtube',
-      active: false,
-    },
-    {
-      icon: Facebook,
-      label: 'Facebook',
-      active: false,
-    },
-    {
-      icon: Twitch,
-      label: 'Twitch',
-      active: false,
-    },
-    {
-      icon: DevTo,
-      label: 'DevTo',
-      active: false,
-    },
-    {
-      icon: Codewars,
-      label: 'Codewars',
-      active: false,
-    },
-    {
-      icon: Codepen,
-      label: 'Codepen',
-      active: false,
-    },
-    {
-      icon: freeCodeCamp,
-      label: 'freeCodeCamp',
-      active: false,
-    },
-    {
-      icon: Gitlab,
-      label: 'Gitlab',
-      active: false,
-    },
-    {
-      icon: Hashnode,
-      label: 'Hashnode',
-      active: false,
-    },
-    {
-      icon: StackOverflow,
-      label: 'StackOverflow',
-      active: false,
-    }
-  ];
+  const [activeItem, setActiveItem] = createSignal(items[0] as ItemProps);
 
   const handleClick = () => SetActive(!active());
 
-  const handleItemClick = (item: {label: string, active?: boolean, icon: Component<JSX.SvgSVGAttributes<SVGSVGElement>>}) => {
+  const handleItemClick = (item: ItemProps) => {
     SetActive(false);
-    items.forEach(item => item.active = false);
-    item.active = true;
+    setActiveItem(item);
   }
-
-  const activeItem = () => items.find(item => item.active)!;
 
   return(
     <div>
@@ -129,11 +116,11 @@ const Dropdown: Component = () => {
         <ChevronDown />
       </div>
       <Show when={active()}>
-        <div id="dropdown" class="z-10 bg-white rounded-lg  w-[480px] shadow-md transition-all absolute mt-[10px]">
+        <div id="dropdown" class="z-10 bg-white rounded-lg  w-[480px] transition-all absolute mt-[10px] shadow-lg">
             <For each={items}>
               {(item, index) => (
                 <div onClick={() => handleItemClick(item)}>
-                  <Item label={item.label} icon={item.icon} active={item.active} />
+                  <Item label={item.label} icon={item.icon} active={item.label === activeItem().label} />
                   <Show when={index() !== items.length - 1}>
                     <div class="px-4">
                       <div class="border-b border-boders w-full"></div>
