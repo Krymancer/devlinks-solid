@@ -6,6 +6,8 @@ import './index.css';
 
 import Main from '@pages/Main';
 import Layout from '@pages/Layout';
+import Login from '@pages/Login';
+import SingUp from '@pages/Singup';
 
 render(() => 
   <Router>
@@ -13,6 +15,8 @@ render(() =>
       <Route path="/" element={<Main />} />
       <Route path="/profile" element={<Main />} />
       <Route path="/layout" element={<Layout />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/singup" element={<SingUp />} />
     </Routes>
   </Router>
 , document.getElementById('root')!);
