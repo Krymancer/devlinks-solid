@@ -1,24 +1,9 @@
-import { Component, ComponentProps, For, JSX, JSXElement, Show, createSignal } from "solid-js";
-
-import Github from '@images/icon-github.svg';
-import FrontendMentor from '@images/icon-frontend-mentor.svg';
-import Twitter from '@images/icon-twitter.svg';
-import Linkedin from '@images/icon-linkedin.svg';
-import Youtube from '@images/icon-youtube.svg';
-import Facebook from '@images/icon-facebook.svg';
-import Twitch from '@images/icon-twitch.svg';
-import DevTo from '@images/icon-devto.svg';
-import Codewars from '@images/icon-codewars.svg';
-import Codepen from '@images/icon-codepen.svg';
-import freeCodeCamp from '@images/icon-freecodecamp.svg';
-import Gitlab from '@images/icon-gitlab.svg';
-import Hashnode from '@images/icon-hashnode.svg';
-import StackOverflow from '@images/icon-stack-overflow.svg';
+import { Component, For, Match, Show, Switch, createSignal } from "solid-js";
 
 import ChevronDown from '@images/icon-chevron-down.svg'
+import SocialIcon from "@components/SocialIcon";
 
-interface ItemProps {
-  icon: Component<ComponentProps<'svg'>>;
+interface DropdownItemProps {
   label: string;
   active?: boolean;
 }
@@ -26,11 +11,10 @@ interface ItemProps {
 const baseItemClass = 'flex gap-3 cursor-pointer items-center hover:text-purple-hover transition-all select-none';
 const activeItemClass = 'flex gap-3 cursor-pointer items-center text-purple trasition-all select-none';
 
-const Item: Component<ItemProps> = (props) => {
+const DropdownItem: Component<DropdownItemProps> = (props) => {
   return (
     <div class={props.active ? activeItemClass : baseItemClass}>
-      {// @ts-ignore
-      props.icon}
+      <SocialIcon label={props.label} />
       {props.label}
       </div>
   );
@@ -38,91 +22,43 @@ const Item: Component<ItemProps> = (props) => {
 
 const baseClass = 'flex gap-4 border border-boders rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between hover:border-purple hover:shadow-[0_0_10px_#633CFF] select-none relative';
 const activeClass = 'flex gap-4 border border-purple shadown shadown-purple rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between shadow-[0_0_10px_#633CFF] select-none relative';
-const items = [
-  {
-    icon: Github,
-    label: 'Github',
-  },
-  {
-    icon: FrontendMentor,
-    label: 'Frontend Mentor',
-  },
-  {
-    icon: Twitter,
-    label: 'Twitter',
-  },
-  {
-    icon: Linkedin,
-    label: 'Linkedin',
-  },
-  {
-    icon: Youtube,
-    label: 'Youtube',
-  },
-  {
-    icon: Facebook,
-    label: 'Facebook',
-  },
-  {
-    icon: Twitch,
-    label: 'Twitch',
-  },
-  {
-    icon: DevTo,
-    label: 'DevTo',
-  },
-  {
-    icon: Codewars,
-    label: 'Codewars',
-  },
-  {
-    icon: Codepen,
-    label: 'Codepen',
-  },
-  {
-    icon: freeCodeCamp,
-    label: 'freeCodeCamp',
-  },
-  {
-    icon: Gitlab,
-    label: 'Gitlab',
-  },
-  {
-    icon: Hashnode,
-    label: 'Hashnode',
-  },
-  {
-    icon: StackOverflow,
-    label: 'StackOverflow',
-  }
-];
 
-const Dropdown: Component = () => {
+interface DropdownProps {
+  items: string[];
+  setItem: (s: string) => void;
+}
+
+const Dropdown: Component<DropdownProps> = (props) => {
   const [active, SetActive] = createSignal(false);
-  const [activeItem, setActiveItem] = createSignal(items[0] as ItemProps);
+  const [activeItem, setActiveItem] = createSignal(props.items[0]);
 
   const handleClick = () => SetActive(!active());
 
-  const handleItemClick = (item: ItemProps) => {
+  const handleItemClick = (item: string) => {
     SetActive(false);
     setActiveItem(item);
+    props.setItem(item);
   }
 
   return(
     <div class="w-full relative">
       <div class={active() ? activeClass : baseClass} onClick={handleClick}>
-        <Item label={activeItem().label} icon={activeItem().icon} />
+        <Switch fallback={<DropdownItem label="Select..." />}>
+          <Match when={activeItem()}>
+            <DropdownItem label={activeItem()}/>
+          </Match>
+        </Switch>
         <ChevronDown />
       </div>
       <Show when={active()}>
         <div class="z-10 bg-white rounded-lg  transition-all absolute mt-[10px] shadow-lg w-full">
-            <For each={items}>
+            <For each={props.items}>
               {(item, index) => (
                 <div class="cursor-pointer" onClick={() => handleItemClick(item)}>
                   <div class="px-4 py-3">
-                    <Item label={item.label} icon={item.icon} active={item.label === activeItem().label} />
+                    <DropdownItem label={item} active={item === activeItem()} />
                   </div>
-                  <Show when={index() !== items.length - 1}>
+                  <Show when={index() !== props.items.length - 1}>
                     <div class="px-4">
                       <div class="border-b border-boders w-full"></div>
                     </div>
