@@ -22,18 +22,28 @@ const Profile: Component = () => {
                 Add your details to create a personal touch to your profile.
               </div>
             </div>
-            <div class="flex flex-col p-5">
-              <div class="flex flex-col gap-4">
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-4 p-5">
                 <div class="text-gray">Profile picture</div>
                 <ImageUpload />
                 <div class="text-gray text-sm mt-2">
                   Image must be below 1024x1024px. Use PNG or JPG format.
                 </div>
               </div>
-              <div>
+              <div class="p-5 gap-3 flex w-full flex-col">
                 <div>
                   <div class="text-sm text-dark-gray">Frist Name*</div>
-                  <TextInput  />
+                  <TextInput text={fristName} setText={setFristName} />
+                </div>
+
+                <div>
+                  <div class="text-sm text-dark-gray">Last Name*</div>
+                  <TextInput text={lastName} setText={setLastName} />
+                </div>
+
+                <div>
+                  <div class="text-sm text-dark-gray">Emai*</div>
+                  <TextInput text={email} setText={setEmail} />
                 </div>
               </div>
             </div>
