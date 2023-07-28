@@ -2,7 +2,7 @@ import { Component, createSignal } from "solid-js";
 
 import TextInput from "@components/TextInput";
 import Button from "@components/Button";
-import { A } from "@solidjs/router";
+import { A, useNavigate } from "@solidjs/router";
 
 import Logo from '@images/logo-devlinks-large.svg';
 import EmailIcon from '@images/icon-email.svg';
@@ -12,6 +12,10 @@ const SingUp: Component = () => {
   const [email, setEmail] = createSignal('');
   const [password, setPassword] = createSignal('');
   const [confirmPassword, setConfirmPassword] = createSignal('');
+
+  const navigate  = useNavigate();
+
+  const createAccount = () => navigate('/login');
 
   return(
     <div class="p-8 flex flex-col gap-16">
@@ -47,7 +51,7 @@ const SingUp: Component = () => {
           </div>
 
           <div>
-            <Button label="Create new account" onClick={() => {}}/>
+            <Button label="Create new account" onClick={createAccount}/>
           </div>
 
           <div class="flex flex-col text-center text-gray">

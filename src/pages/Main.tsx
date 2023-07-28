@@ -10,7 +10,7 @@ const Main : Component = () => {
   return (
     <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
-      <main class="flex p-4 gap-6 py-0 flex-1 md:px-6">
+      <main class="flex p-4 gap-6 md:px-6 flex-1">
         <Preview />
         <Card>
           <div class="flex flex-col gap-10 flex-1">

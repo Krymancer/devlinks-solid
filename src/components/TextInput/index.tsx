@@ -19,10 +19,12 @@ const TextInput: Component<TextInputProps> = (props) => {
   const [error, setError] = createSignal(false);
 
   return <div class={error() ? errorClass : baseClass}>
-    { // @ts-ignore
-      props.icon ?? 
-      LinkIcon
-    }
+    <Show when={props.icon}>
+      { // @ts-ignore
+            props.icon ?? 
+            LinkIcon
+          }
+    </Show>
     <input 
       class={error() ? errorInputClass : baseInputClass}
       type={props.type ?? 'text'}
