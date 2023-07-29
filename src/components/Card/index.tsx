@@ -4,8 +4,8 @@ import Button from "@components/Button";
 
 const Card : Component<{children: JSXElement }> = (props) => {
   return(
-    <div class="flex flex-col rounded-xl bg-white justify-between flex-1">
-      <div class="flex p-6 md:p-6 h-full">
+    <div class="flex flex-col rounded-xl bg-white justify-between">
+      <div class="p-6">
         {props.children}
       </div>
       <div class="w-full border-boders border-t  p-6 md:p-6 flex gap-1 flex-col md:justify-end md:items-end">

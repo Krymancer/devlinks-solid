@@ -9,9 +9,9 @@ import ProfileDeatilsIcon from "@images/icon-profile-details-header.svg";
 import PreviewIcon from "@images/icon-preview-header.svg";
 
 const baseClasses =
-  "flex gap-2 font-base items-center justify-center px-7 py-3 text-gray hover:text-purple cursor-pointer transition-all";
+  "flex gap-2 font-base items-center justify-center px-7 py-[11px] text-gray hover:text-purple cursor-pointer transition-all";
 const activeClasses =
-  "flex gap-2 font-base items-center justify-center rounded-lg px-7 py-3 text-purple bg-light-purple cursor-pointer transition-all";
+  "flex gap-2 font-base items-center justify-center rounded-lg px-7 py-[11px] text-purple bg-light-purple cursor-pointer transition-all";
 
 const Header: Component = () => {
   const navigate = useNavigate();
@@ -21,9 +21,9 @@ const Header: Component = () => {
   const profileClick = () => navigate("/profile");
 
   return (
-    <header class="px-6 py-4  md:p-6 bg-white md:bg-transparent transition-all">
+    <header class="px-6 py-4 md:p-6 bg-white md:bg-transparent transition-all">
       <div class="bg-white flex items-center justify-between md:px-6 md:py-2 rounded-xl">
-      <div>
+      <div class="p-[5px]">
         <div class="mr-5 md:hidden">
           <Logo />
         </div>
@@ -49,7 +49,7 @@ const Header: Component = () => {
         </div>
       </div>
 
-      <div class="border-purple border rounded-lg px-4 py-3 cursor-pointer hover:bg-purple-hover">
+      <div class="box-border border-purple border rounded-lg px-4 py-[10px] cursor-pointer hover:bg-purple-hover">
         <div class="md:hidden">        
           <PreviewIcon />
         </div>

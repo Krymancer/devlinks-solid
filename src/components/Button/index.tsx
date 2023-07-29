@@ -42,48 +42,48 @@ const Button: Component<ButtonProps> = (props) => {
 
 const ButtonPrimaryDefault: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="bg-purple text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] bg-purple text-white font-bold text-base rounded-lg flex items-center justify-center cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };
 
 const ButtonPrimaryActive: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="bg-purple-hover text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] bg-purple-hover text-white font-bold text-base rounded-lg flex items-center justify-center cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };
 
 const ButtonPrimaryDisabled: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="bg-purple opacity-25 text-white font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] bg-purple opacity-25 text-white font-bold text-base rounded-lg flex items-center justify-center cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };
 
 const ButtonSecondaryDefault: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="text-purple border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:bg-purple-hover transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] text-purple border border-purple font-bold text-base rounded-lg flex items-center justify-center cursor-pointer hover:bg-purple-hover transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };
 
 const ButtonSecondaryActive: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="text-purple border border-purple bg-light-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] text-purple border border-purple bg-light-purple font-bold text-base rounded-lg flex items-center justify-center cursor-pointer hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };
 
 const ButtonSecondaryDisabled: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="text-purple opacity-25 border border-purple font-bold font-base rounded-lg flex items-center justify-center py-3 cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
-      {props.label}
+    <div class="box-border py-[10px] text-purple opacity-25 border border-purple font-bold text-base rounded-lg flex items-center justify-center cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+      <div class="h-6">{props.label}</div>
     </div>
   );
 };

@@ -32,11 +32,13 @@ import SocialIcon from "@components/SocialIcon";
 const Link: Component<LinkProps> = (props) => {
   return (
     <a class="w-full" href={props.href} target="_blank">
-      <div class={'flex p-4 gap-2 rounded-lg text-white items-center border border-boders w-full ' + loockup[props.label as keyof(LookcupTable)]}>
-        <SocialIcon label={props.label} />
-        {props.label}
+      <div class={'flex p-4 rounded-lg text-white items-center justify-between border border-boders w-full ' + loockup[props.label as keyof(LookcupTable)]}>
+        <div class="flex gap-2 items-center">
+          <SocialIcon label={props.label} />
+          {props.label}
+        </div>
+        <RightArrow />
       </div>
-      <RightArrow />
     </a>
   );
 };
