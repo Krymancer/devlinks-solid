@@ -32,7 +32,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![No links](https://raw.githubusercontent.com/Krymancer/devlinks-solid/main/.github/screenshots/no-links.png)
+![Some links](https://raw.githubusercontent.com/Krymancer/devlinks-solid/main/.github/screenshots/some-links.png)
 
 ### Links
 
