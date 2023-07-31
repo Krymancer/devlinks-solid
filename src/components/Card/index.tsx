@@ -5,6 +5,9 @@ import Button from "@components/Button";
 interface CardProps {
   children: JSXElement;
   button?: boolean;
+  label?: string;
+  onClick?: () => void;
+  buttonDisabled?: boolean;
 }
 
 const Card : Component<CardProps> = (props) => {
@@ -16,7 +19,7 @@ const Card : Component<CardProps> = (props) => {
       <Show when={props.button}>
         <div class="w-full border-boders border-t  p-6 md:p-6 flex gap-1 flex-col md:justify-end md:items-end">
           <div class="w-full md:w-[91px]">
-            <Button disabled label="Save" onClick={() => {}} />
+            <Button label={props.label ?? "Save"} onClick={props.onClick ?? (() => {})} disabled={props.buttonDisabled} />
           </div>
         </div>
       </Show>

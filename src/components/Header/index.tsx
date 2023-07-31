@@ -23,8 +23,8 @@ const Header: Component = () => {
 
   return (
     <header class="px-6 py-4 md:p-6 bg-white md:bg-transparent transition-all">
-      <div class="bg-white flex items-center justify-between md:px-6 md:py-2 rounded-xl">
-      <div class="p-[5px]">
+      <div class="bg-white flex items-center justify-between md:px-6 md:py-4 rounded-xl">
+      <div class="p-[5px] md:p-0">
         <div class="mr-5 md:hidden">
           <Logo />
         </div>

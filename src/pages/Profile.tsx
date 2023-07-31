@@ -4,6 +4,7 @@ import Header from "@components/Header";
 import Card from "@components/Card";
 import ImageUpload from "@components/ImageUpload";
 import TextInput from "@components/TextInput";
+import Preview from "@components/Preview";
 
 const Profile: Component = () => {
   const [fristName, setFristName] = createSignal('');
@@ -14,7 +15,8 @@ const Profile: Component = () => {
     <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
       <main class="flex p-4 gap-6 py-0 flex-1 md:px-6">
-        <Card>
+        <Preview />
+        <Card button>
           <div class="flex flex-col gap-10 p-6">
             <div class="flex flex-col gap-2">
               <div class="font-bold text-xl">Profile Details</div>
