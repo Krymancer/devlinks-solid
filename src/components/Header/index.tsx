@@ -19,6 +19,7 @@ const Header: Component = () => {
 
   const linkClick = () => navigate("/");
   const profileClick = () => navigate("/profile");
+  const previewClick = () => navigate("/preview");
 
   return (
     <header class="px-6 py-4 md:p-6 bg-white md:bg-transparent transition-all">
@@ -49,8 +50,8 @@ const Header: Component = () => {
         </div>
       </div>
 
-      <div class="box-border border-purple border rounded-lg px-4 py-[10px] cursor-pointer hover:bg-purple-hover">
-        <div class="md:hidden">        
+      <div class="box-border border-purple border rounded-lg px-4 py-[10px] cursor-pointer hover:bg-purple-hover" onClick={previewClick}>
+        <div class="md:hidden">
           <PreviewIcon />
         </div>
         <span class="hidden md:flex text-purple font-bold">Preview</span>

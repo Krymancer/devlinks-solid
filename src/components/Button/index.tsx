@@ -3,7 +3,7 @@ import { Component, Match, Switch } from "solid-js";
 interface ButtonProps {
   label: string;
   onClick: () => void;
-  type?: "primary" | "secondary";
+  secondary?: boolean;
   disabled?: boolean;
   active?: boolean;
 }
@@ -16,7 +16,7 @@ interface ButtonVariantProps {
 const Button: Component<ButtonProps> = (props) => {
   return(
     <Switch fallback={<ButtonPrimaryDefault label={props.label} onClick={props.onClick}/>}>
-      <Match when={props.type === undefined || props.type === "primary"}>
+      <Match when={!props.secondary}>
         <Switch fallback={<ButtonPrimaryDefault label={props.label} onClick={props.onClick}/>}>
           <Match when={props.disabled}>
             <ButtonPrimaryDisabled label={props.label} onClick={props.onClick}/>
@@ -26,7 +26,7 @@ const Button: Component<ButtonProps> = (props) => {
           </Match>
         </Switch>
       </Match>
-      <Match when={props.type === "secondary"}>
+      <Match when={props.secondary}>
         <Switch fallback={<ButtonSecondaryDefault label={props.label} onClick={props.onClick}/>}>
           <Match when={props.disabled}>
             <ButtonSecondaryDisabled label={props.label} onClick={props.onClick}/>

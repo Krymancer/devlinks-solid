@@ -1,6 +1,8 @@
 import { Component } from "solid-js";
+import { useNavigate } from "@solidjs/router";
 
 import IlustrationEmpty from "@images/illustration-empty.svg";
+
 import Header from "@components/Header";
 import Card from "@components/Card";
 import Button from "@components/Button";
@@ -12,7 +14,7 @@ const Main: Component = () => {
       <Header />
       <main class="flex p-4 gap-6 md:px-6 flex-1">
         <Preview />
-        <Card>
+        <Card button>
           <div class="flex flex-col gap-10 h-full">
             <div class="flex flex-col gap-2">
               <div class="font-bold text-lg"> Customize your links</div>
@@ -23,7 +25,7 @@ const Main: Component = () => {
             </div>
             <div class="flex flex-col gap-6 h-full">
               <Button
-                type="secondary"
+                secondary
                 label="+ Add new link"
                 onClick={() => {}}
               />
@@ -43,7 +45,7 @@ const GetStarted = () => {
         <div class="h-20 flex items-center justify-center md:h-full">
           <IlustrationEmpty class="scale-50 md:scale-100" />
         </div>
-        <div class="font-bold text-lg text-center">Let's get you started</div>
+        <div class="font-bold text-xl text-center">Let's get you started</div>
         <div class="text-center text-gray text-base">
           Use the "Add new link" button to get started. Once you have more than
           one link, you can reorder and edit them. We're here to help you share
