@@ -15,7 +15,7 @@ const loockup : LookcupTable = {
   "Codepen": "bg-[#FFFFFF] text-[#000] ",
   "Twitter": "bg-[#26A7DE] text-white ",
   "Linkedin": "bg-[#0072B1] text-white ",
-  "YouTube": "bg-[#FF0000] text-white ",
+  "YouTube": "bg-[#FF0000] text-white",
   "Facebook": "bg-[#3B5998] text-white ",
   "Twitch": "bg-[#9146FF] text-white ",
   "Dev.to": "bg-[#333333] text-white ",
@@ -31,11 +31,11 @@ import SocialIcon from "@components/SocialIcon";
 
 const Link: Component<LinkProps> = (props) => {
   return (
-    <a class="w-full" href={props.href} target="_blank">
-      <div class={'flex p-4 rounded-lg text-white items-center justify-between border border-boders w-full ' + loockup[props.label as keyof(LookcupTable)]}>
-        <div class="flex gap-2 items-center">
+    <a class="w-full h-full" href={props.href} target="_blank">
+      <div class={'flex px-4 py-[11px] rounded-lg items-center text-white justify-between border border-boders w-full ' + loockup[props.label]}>
+        <div class={"flex gap-2 items-center w-full h-full " + loockup[props.label]}>
           <SocialIcon label={props.label} />
-          {props.label}
+          <div class="flex items-center h-[18px] ">{props.label}</div>
         </div>
         <RightArrow />
       </div>

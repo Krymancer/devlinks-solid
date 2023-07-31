@@ -1,10 +1,16 @@
-import { Component } from "solid-js";
+import Link from "@components/Link";
+import { Accessor, Component, For, Show } from "solid-js";
 
-import PhoneMockup from "@images/illustration-phone-mockup.svg";
+interface PreviewProps {
+  items: Accessor<{platform: string, url: string}[]>;
+}
 
-const Preview: Component = () => {
+const Preview: Component<PreviewProps> = (props) => {
+  const baseY = 278;
+  const yIncrement = 64;
+
   return (
-    <div class="hidden lg:flex items-center justify-center bg-white p-6 w-[500px] rounded-lg">
+    <div class="sticky top-4 hidden lg:flex items-center justify-center bg-white p-6 w-[500px] rounded-xl">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="308"
@@ -24,24 +30,19 @@ const Preview: Component = () => {
         <foreignObject x="108" y="80" width="96" height="96" >
           <div class="rounded-full bg-[#EEE] w-full h-full"></div>
         </foreignObject>
+
         <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8" />
         <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4" />
 
-        <foreignObject x="35" y="278" width="237" height="44">
-          <div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg"></div>
-        </foreignObject>
-        <foreignObject x="35" y="342" width="237" height="44">
-          <div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg"></div>
-        </foreignObject>
-        <foreignObject x="35" y="406" width="237" height="44">
-          <div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg"></div>
-        </foreignObject>
-        <foreignObject x="35" y="470" width="237" height="44">
-          <div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg"></div>
-        </foreignObject>
-        <foreignObject x="35" y="534" width="237" height="44">
-          <div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg"></div>
-        </foreignObject>
+        <For each={new Array(5)}>
+          {(_, index) => (
+            <foreignObject x="35" y={baseY + (index() * yIncrement)} width="237" height="44">
+            <Show when={props.items()[index()]} fallback={<div class="w-full h-full flex items-center justify-center bg-[#EEE] rounded-lg "></div>}>
+              <Link label={props.items()[index()].platform} href={props.items()[index()].url} />
+            </Show>
+          </foreignObject>
+          )}
+        </For>
       </svg>
     </div>
   );

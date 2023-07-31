@@ -20,8 +20,8 @@ const DropdownItem: Component<DropdownItemProps> = (props) => {
   );
 };
 
-const baseClass = 'flex gap-4 border border-boders rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between hover:border-purple hover:shadow-[0_0_10px_#633CFF] select-none relative';
-const activeClass = 'flex gap-4 border border-purple shadown shadown-purple rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between shadow-[0_0_10px_#633CFF] select-none relative';
+const baseClass = 'bg-white flex gap-4 border border-boders rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between hover:border-purple hover:shadow-[0_0_10px_#633CFF] select-none relative';
+const activeClass = 'bg-white flex gap-4 border border-purple shadown shadown-purple rounded-lg cursor-pointer items-center px-4 py-3 w-full justify-between shadow-[0_0_10px_#633CFF] select-none relative';
 
 interface DropdownProps {
   items: string[];

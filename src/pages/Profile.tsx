@@ -11,11 +11,15 @@ const Profile: Component = () => {
   const [lastName, setLastName] = createSignal('');
   const [email, setEmail] = createSignal('');
 
+  const [items, setItems] = createSignal([] as any[]);
+
   return (
     <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
       <main class="flex p-4 gap-6 py-0 flex-1 md:px-6">
-        <Preview />
+        <div class="">
+          <Preview items={items}/>
+        </div>
         <Card button>
           <div class="flex flex-col gap-10 p-6">
             <div class="flex flex-col gap-2">

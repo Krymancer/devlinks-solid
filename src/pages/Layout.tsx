@@ -35,9 +35,9 @@ const Layout: Component = () => {
       <Button label="Button" onClick={() => {}} />
       <Button label="Button" onClick={() => {}} active />
       <Button label="Button" onClick={() => {}} disabled />
-      <Button label="Button" onClick={() => {}} type="secondary" />
-      <Button label="Button" onClick={() => {}} type="secondary" active />
-      <Button label="Button" onClick={() => {}} type="secondary" disabled />
+      <Button label="Button" onClick={() => {}} secondary />
+      <Button label="Button" onClick={() => {}} secondary active />
+      <Button label="Button" onClick={() => {}} secondary disabled />
       <ImageUpload />
       <For each={items}>
         {(item) => (

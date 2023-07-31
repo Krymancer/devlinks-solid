@@ -23,7 +23,7 @@ const Preview: Component = () => {
                 </div>
               </div>
               <div class="w-[237px]">
-                <Link label="Github" href="https://github.com/krymancer"/>
+                <Link label="Frontend Mentor" href="https://github.com/krymancer"/>
               </div>
             </div>
           </Card>

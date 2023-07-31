@@ -10,8 +10,8 @@ interface TextInputProps {
 
 import LinkIcon from '@images/icon-link-copied-to-clipboard.svg'
 
-const baseClass = 'flex items-center px-4 py-3 gap-3 border border-boders rounded-lg w-full hover:border-purple hover:shadow-[0_0_10px_#633CFF] focus-within:border-purple focus-within:shadow-[0_0_10px_#633CFF]';
-const errorClass = 'flex items-center px-4 py-3 gap-3 border border-red rounded-lg w-full text-red';
+const baseClass = 'bg-white flex items-center px-4 py-3 gap-3 border border-boders rounded-lg w-full hover:border-purple hover:shadow-[0_0_10px_#633CFF] focus-within:border-purple focus-within:shadow-[0_0_10px_#633CFF]';
+const errorClass = 'bg-white flex items-center px-4 py-3 gap-3 border border-red rounded-lg w-full text-red';
 const baseInputClass = 'bg-transparent outline-none caret-purple border-none w-full';
 const errorInputClass = 'bg-transparent outline-none caret-purple border-none w-full text-red';
 
