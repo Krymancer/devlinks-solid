@@ -9,7 +9,7 @@ const GetStarted: Component = () => {
         <div class="h-20 flex items-center justify-center md:h-full">
           <IlustrationEmpty class="scale-50 md:scale-100" />
         </div>
-        <div class="font-bold text-xl text-center">Let's get you started</div>
+        <div class="font-bold text-lg md:text-xl text-center">Let's get you started</div>
         <div class="text-center text-gray text-base">
           Use the "Add new link" button to get started. Once you have more than
           one link, you can reorder and edit them. We're here to help you share

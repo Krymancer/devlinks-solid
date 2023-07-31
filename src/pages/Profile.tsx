@@ -16,8 +16,8 @@ const Profile: Component = () => {
   return (
     <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
-      <main class="flex p-4 gap-6 py-0 flex-1 md:px-6">
-        <div class="">
+      <main class="flex p-4 md:py-0  gap-6 md:px-6 flex-1 w-full">
+        <div class="hidden md:flex">
           <Preview items={items}/>
         </div>
         <Card button>

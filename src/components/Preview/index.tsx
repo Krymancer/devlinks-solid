@@ -10,7 +10,7 @@ const Preview: Component<PreviewProps> = (props) => {
   const yIncrement = 64;
 
   return (
-    <div class="sticky top-4 hidden lg:flex items-center justify-center bg-white p-6 w-[500px] rounded-xl">
+    <div class="hidden sticky top-4 lg:flex items-center justify-center bg-white p-6 w-[500px] rounded-xl">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="308"
