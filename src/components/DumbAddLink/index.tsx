@@ -3,7 +3,6 @@ import { Accessor, Component, createSignal } from "solid-js";
 import DragAndDropIcon from '@images/icon-drag-and-drop.svg'
 import Dropdown from "@components/Dropdown";
 import TextInput from "@components/TextInput";
-import { Id, createSortable, useDragDropContext, useSortableContext } from "@thisbeyond/solid-dnd";
 
 interface Placeholder {
   [key: string]: string;
@@ -12,14 +11,10 @@ interface Placeholder {
 interface AddLinkProps {
   id: Accessor<number>;
   selected: Accessor<string>;
-  setSelected: (value: string) => void;
   url: Accessor<string>;
-  setUrl: (value: string) => void;
-  notSortable?: boolean;
 }
 
-const AddLink: Component<AddLinkProps> = (props) => {
-  const sortable = createSortable(props.id() as Id);
+const DumbAddLink: Component<AddLinkProps> = (props) => {
   const items = [
     "Github",
     "Frontend Mentor",
@@ -55,9 +50,7 @@ const AddLink: Component<AddLinkProps> = (props) => {
   };
 
   return(
-    <div class="bg-light-gray flex flex-col p-5 gap-3 rounded-lg" 
-      use:sortable
-    >
+    <div class="bg-light-gray flex flex-col p-5 gap-3 rounded-lg">
       <div class="flex text-gray items-center justify-between cursor-grab">
         <div class="flex items-center gap-2 text-gray">
           <DragAndDropIcon />
@@ -67,14 +60,14 @@ const AddLink: Component<AddLinkProps> = (props) => {
       </div>
       <div class="flex flex-col gap-1">
         <div class="text-sm">Platform</div>
-        <Dropdown items={items} setItem={props.setSelected}/>
+        <Dropdown items={items} setItem={() => {}}/>
       </div>
       <div class="flex flex-col gap-1">
         <div class="text-sm">Link</div>
-        <TextInput text={props.url} setText={props.setUrl} placeholder={placeholders[props.selected()]}/>
+        <TextInput text={props.url} setText={() => {}} placeholder={placeholders[props.selected()]}/>
       </div>
     </div>
   );
 };
 
-export default AddLink;
+export default DumbAddLink;
