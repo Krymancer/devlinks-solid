@@ -4,13 +4,13 @@
 
 @font-face {
   font-family: InstrumentSans;
-  src: url("src/assets/fonts/InstrumentSans-VariableFont_wdth,wght.ttf") format("opentype");
+  src: url("fonts/InstrumentSans-VariableFont_wdth,wght.ttf") format("opentype");
 }
 
 @font-face {
   font-family: InstrumentSans;
   font-style: italic;
-  src: url("src/assets/fonts/InstrumentSans-Italic-VariableFont_wdth,wght.ttf") format("opentype");
+  src: url("fonts/InstrumentSans-Italic-VariableFont_wdth,wght.ttf") format("opentype");
 }
 
 @layer base {

@@ -1,4 +1,4 @@
-import { Component, For, Show, createSignal } from "solid-js";
+import { Component, Show, createSignal } from "solid-js";
 
 import Header from "@components/Header";
 import Card from "@components/Card";
@@ -23,14 +23,14 @@ const Main: Component = () => {
   return (
     <div class="flex flex-col bg-light-gray min-h-screen transition-all">
       <Header />
-      <main class="flex p-4 gap-6 md:px-6 flex-1">
+      <main class="flex p-4 py-0 gap-6 md:px-6 flex-1">
         <div class="">
           <Preview items={links} />
         </div>
         <Card button buttonDisabled={!links().length}>
-          <div class="flex flex-col gap-10 h-full">
+          <div class="flex flex-col gap-10 p-6 h-full">
             <div class="flex flex-col gap-2">
-              <div class="font-bold text-lg"> Customize your links</div>
+              <div class="font-bold text-xl"> Customize your links</div>
               <div class="text-base text-gray">
                 Add/edit/remove links bellow and then share all you profiles
                 with the world!
