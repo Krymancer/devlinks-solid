@@ -9,8 +9,8 @@ module.exports = {
       },
       colors: {
         'dark-gray': '#333333',
-        gray: '#737373',
-        'light-gray': '#F5F5F5',
+        gray: '#595959',
+        'light-gray': '#737373',
         boders: '#D9D9D9',
         purple: '#633CFF',
         'light-purple': '#EFEBFF',
