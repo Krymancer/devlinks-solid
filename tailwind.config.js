@@ -12,7 +12,7 @@ module.exports = {
         gray: '#595959',
         'light-gray': '#F1F1F1',
         boders: '#D9D9D9',
-        purple: '#633CFF',
+        purple: '#6500FF',
         'light-purple': '#EFEBFF',
         'purple-hover': '#BEADFF',
         white: '#FFFFFF',
