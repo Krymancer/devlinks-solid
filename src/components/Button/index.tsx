@@ -58,7 +58,7 @@ const ButtonPrimaryActive: Component<ButtonVariantProps> = (props) => {
 
 const ButtonPrimaryDisabled: Component<ButtonVariantProps> = (props) => {
   return (
-    <div class="box-border py-[10px] bg-purple opacity-25 text-white font-bold text-base rounded-lg flex items-center justify-center cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
+    <div class="box-border py-[10px] bg-purple opacity-75 text-white font-bold text-base rounded-lg flex items-center justify-center cursor-not-allowed hover:opacity-25 transition-all md:px-4 select-none w-full" onClick={props.onClick}>
       <div class="h-6">{props.label}</div>
     </div>
   );
